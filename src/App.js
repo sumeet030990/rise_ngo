@@ -4,6 +4,9 @@ import './App.css';
 import { useEffect, useRef, useState } from 'react';
 import { Card, Navbar, Nav, Container, Form, Row, Col, Button } from 'react-bootstrap';
 import generatePDF from 'react-to-pdf';
+import DatePicker from 'react-datepicker';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 function NumInWords(number) {
   const first = [
@@ -109,6 +112,12 @@ function App() {
     return `${receiptNo}/${month}/${yearRange}`;
   };
 
+  const handleDateChange = (date) => {
+    const formattedDate = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: 'numeric' });
+    setDate(formattedDate);
+    setDate(formattedDate);
+  };
+
   return (
     <>
       <Navbar expand="lg" bg="dark" data-bs-theme="dark">
@@ -186,6 +195,11 @@ function App() {
               />
             </Col>
             <Col xs="auto">
+              <Form.Label>Date:</Form.Label>
+              <br />
+              <DatePicker className="mr-sm-2 form-control" value={date} onChange={(date) => handleDateChange(date)} />
+            </Col>
+            <Col xs="auto">
               <Button type="button" onClick={() => generatePDF(targetRef, { filename: `${receiptNo || 'page'}.pdf` })}>
                 Save Receipt
               </Button>
@@ -240,7 +254,7 @@ function App() {
         <div className="subject-to-realization mt-4">* Subject to realization of Cheque / DD</div>
 
         <div className="sign-container me-3">
-          <img src={sign} alt="sign" width={250} height={100} />
+          <img src={sign} alt="sign" width={387} height={100} />
           <p className="mt-3">For RISING INFINITELY FOR SOCIAL EMPOWERMENT</p>
         </div>
       </div>
