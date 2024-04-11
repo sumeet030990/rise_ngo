@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+.receipt-heading{
+  display: flex;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.rise-details {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 0.2;
+  font-size: 12px;
+  font-weight: 500;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.donation-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-weight: 500;
+}
+
+.receipt {
+  font-size: 24px;
+  letter-spacing: 5px;
+}
+
+.receipt-text {
+  font-size: 20px;
+  line-height: 1;
+  text-align: justify;
+  letter-spacing: 2px;
+  margin-left: 14rem;
+}
+
+.amount-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-left: 14rem;
+  font-size: 23px;
+  font-weight: 500;
+}
+.amount-round-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 1%;
+  border: 1px solid;
+  width: 15%;
+  height: 40px;
+  border-radius: 25px 25px 25px 25px;
+}
+
+.subject-to-realization{
+  margin-left: 14rem;
+}
+
+.sign-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
